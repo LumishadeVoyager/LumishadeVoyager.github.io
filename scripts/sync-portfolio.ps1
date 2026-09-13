@@ -43,7 +43,9 @@ foreach ($file in $files) {
   })
 }
 
-$photos | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath $manifestPath -Encoding utf8
+$manifest = $photos | ConvertTo-Json -Depth 3
+$utf8WithoutBom = New-Object System.Text.UTF8Encoding($false)
+[System.IO.File]::WriteAllText($manifestPath, $manifest, $utf8WithoutBom)
 Write-Host "Generated previews and manifest for $($photos.Count) photos."
 
 if ($UploadOriginals) {
