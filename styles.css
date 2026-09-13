@@ -3,20 +3,31 @@
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial,"Microsoft YaHei",sans-serif; }
 .site-header { height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(20px,5vw,72px); border-bottom:1px solid var(--line); }
+.site-header nav { display:flex; gap:20px; }
 .brand,.jump-link { color:inherit; text-decoration:none; letter-spacing:.08em; font-size:13px; font-weight:700; }
 .brand span { margin-left:7px; font-size:10px; color:var(--muted); letter-spacing:.13em; }
 .jump-link { color:var(--muted); }
-.hero,.work { padding-left:clamp(20px,10vw,160px); padding-right:clamp(20px,10vw,160px); }
+.hero,.about,.projects,.work { padding-left:clamp(20px,10vw,160px); padding-right:clamp(20px,10vw,160px); }
 .hero { min-height:56vh; display:flex; flex-direction:column; justify-content:center; padding-top:56px; padding-bottom:72px; border-bottom:1px solid var(--line); }
 .eyebrow { margin:0 0 16px; color:var(--muted); letter-spacing:.14em; font-size:11px; font-weight:700; }
 h1 { margin:0; max-width:850px; font-family:Georgia,"Songti SC",serif; font-weight:400; font-size:clamp(64px,12vw,184px); letter-spacing:-.07em; line-height:.9; }
 .intro { margin:34px 0 0; font-size:clamp(19px,2vw,28px); }
 .note { margin:16px 0 0; color:var(--muted); font-size:13px; }
-.work { padding-top:100px; padding-bottom:100px; }
+.about,.projects,.work { padding-top:100px; padding-bottom:100px; border-bottom:1px solid var(--line); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,8vw,140px); align-items:start; }
+.about h2 { font-size:clamp(38px,5vw,70px); line-height:1.05; }
+.about-grid p { margin:0 0 20px; max-width:540px; font-size:18px; line-height:1.75; }
 .section-heading { display:grid; grid-template-columns:1fr auto; align-items:end; margin-bottom:36px; }
 .section-heading .eyebrow { grid-column:1/-1; }
 h2 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:44px; font-weight:400; }
+.project-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); }
+.project-grid article { min-height:260px; padding:22px 24px 30px 0; border-bottom:1px solid var(--line); }
+.project-grid article + article { padding-left:24px; border-left:1px solid var(--line); }
+.project-number { margin:0 0 50px; color:var(--muted); font-size:12px; }
+.project-grid h3 { margin:0 0 12px; font-family:Georgia,"Songti SC",serif; font-weight:400; font-size:29px; }
+.project-grid article > p:last-child { max-width:320px; margin:0; color:#4f4b44; line-height:1.65; font-size:14px; }
 .count { margin:0; color:var(--muted); font-size:13px; }
+.work-note { margin:-18px 0 32px; color:var(--muted); font-size:13px; }
 .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
 .photo { position:relative; display:block; min-height:200px; padding:0; overflow:hidden; border:0; background:#ddd; cursor:zoom-in; }
 .photo img { display:block; width:100%; height:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .5s ease; }
@@ -31,4 +42,4 @@ h2 { margin:0; font-family:Georgia,"Songti SC",serif; font-size:44px; font-weigh
 .viewer a,.viewer button { padding:8px 11px; border:1px solid #777; color:#fff; background:transparent; font:inherit; font-size:12px; text-decoration:none; cursor:pointer; }
 #viewer-image { display:block; width:100%; height:calc(100% - 58px); object-fit:contain; }
 footer { border-top:1px solid var(--line); padding:28px clamp(20px,5vw,72px); color:var(--muted); font-size:12px; }
-@media (max-width:720px) { .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; } .work { padding-top:64px; padding-bottom:64px; } .hero { min-height:52vh; } }
+@media (max-width:720px) { .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; } .about,.projects,.work { padding-top:64px; padding-bottom:64px; } .hero { min-height:52vh; } .about-grid,.project-grid { grid-template-columns:1fr; } .project-grid article + article { padding-left:0; border-left:0; } .site-header nav { gap:12px; } }
