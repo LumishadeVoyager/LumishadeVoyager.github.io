@@ -3,30 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="杨文俊的摄影作品集。" />
-    <title>杨文俊 · 摄影作品集</title>
+    <meta name="description" content="杨文俊的个人主页：机器人、自动化与摄影。" />
+    <title>杨文俊 · 个人主页</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="返回顶部">YWJ <span>PHOTOGRAPHY</span></a>
-      <a class="jump-link" href="#work">作品</a>
+      <a class="brand" href="#top" aria-label="返回顶部">YWJ <span>PERSONAL SITE</span></a>
+      <nav aria-label="页面导航">
+        <a class="jump-link" href="#about">关于</a>
+        <a class="jump-link" href="#projects">项目</a>
+        <a class="jump-link" href="#work">摄影</a>
+      </nav>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">PHOTOGRAPHIC ARCHIVE</p>
+        <p class="eyebrow">PERSONAL SITE · BEIJING</p>
         <h1 id="page-title">杨文俊</h1>
-        <p class="intro">记录光线、空间与不期而遇的瞬间。</p>
-        <p class="note">所有作品均为带水印原图。点击图片可查看原始尺寸并下载。</p>
+        <p class="intro">机器人与自动化工程学习者，<br />也用摄影记录光线、空间与不期而遇的瞬间。</p>
+      </section>
+
+      <section id="about" class="about" aria-labelledby="about-title">
+        <p class="eyebrow">ABOUT</p>
+        <div class="about-grid">
+          <h2 id="about-title">技术与观察<br />并行生长。</h2>
+          <div>
+            <p>北京信息科技大学自动化专业（卓越工程师计划）本科生，预计于 2027 年毕业。</p>
+            <p>兴趣集中在水下机器人、嵌入式系统、计算机视觉与智能控制；摄影则是另一种理解环境与人的方式。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects" aria-labelledby="project-title">
+        <div class="section-heading">
+          <p class="eyebrow">SELECTED PROJECTS</p>
+          <h2 id="project-title">项目经历</h2>
+        </div>
+        <div class="project-grid">
+          <article><p class="project-number">01</p><h3>深智鲨</h3><p>基于嵌入式 AI 的小型无人潜航器自主控制系统。融合运动控制、视觉识别与任务执行。</p></article>
+          <article><p class="project-number">02</p><h3>锤头鲨</h3><p>竞赛级水下机器人项目，围绕多推进器控制、模块化设计与水下作业可靠性展开。</p></article>
+          <article><p class="project-number">03</p><h3>影石创新</h3><p>系统固件测试实习，参与飞行相机与相关功能模块的测试、数据梳理与流程优化。</p></article>
+        </div>
       </section>
 
       <section id="work" class="work" aria-labelledby="work-title">
         <div class="section-heading">
-          <p class="eyebrow">SELECTED WORKS</p>
-          <h2 id="work-title">作品集</h2>
+          <p class="eyebrow">PHOTOGRAPHY</p>
+          <h2 id="work-title">摄影作品</h2>
           <p id="photo-count" class="count" aria-live="polite">加载中</p>
         </div>
+        <p class="work-note">所有作品均为带水印原图。点击图片可查看原始尺寸并下载。</p>
         <div id="gallery" class="gallery" aria-live="polite"></div>
       </section>
     </main>
