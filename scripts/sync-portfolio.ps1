@@ -61,7 +61,12 @@ if ($CommitAndPush) {
   Push-Location $root
   try {
     git add assets/thumbs data/photos.json
-    git commit -m "Update photography portfolio"; if ($LASTEXITCODE -ne 0) { throw 'Git commit failed.' }
-    git push origin main; if ($LASTEXITCODE -ne 0) { throw 'Git push failed.' }
+    git diff --cached --quiet
+    if ($LASTEXITCODE -ne 0) {
+      git commit -m "Update photography portfolio"; if ($LASTEXITCODE -ne 0) { throw 'Git commit failed.' }
+      git push origin main; if ($LASTEXITCODE -ne 0) { throw 'Git push failed.' }
+    } else {
+      Write-Host 'No preview or manifest changes to commit.'
+    }
   } finally { Pop-Location }
 }
