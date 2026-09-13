@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="杨文俊的摄影作品集。" />
+    <title>杨文俊 · 摄影作品集</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回顶部">YWJ <span>PHOTOGRAPHY</span></a>
+      <a class="jump-link" href="#work">作品</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">PHOTOGRAPHIC ARCHIVE</p>
+        <h1 id="page-title">杨文俊</h1>
+        <p class="intro">记录光线、空间与不期而遇的瞬间。</p>
+        <p class="note">所有作品均为带水印原图。点击图片可查看原始尺寸并下载。</p>
+      </section>
+
+      <section id="work" class="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">SELECTED WORKS</p>
+          <h2 id="work-title">作品集</h2>
+          <p id="photo-count" class="count" aria-live="polite">加载中</p>
+        </div>
+        <div id="gallery" class="gallery" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> 杨文俊</footer>
+
+    <dialog id="viewer" class="viewer" aria-labelledby="viewer-title">
+      <div class="viewer-bar">
+        <p id="viewer-title">原始作品</p>
+        <div class="viewer-actions">
+          <a id="download" class="download" href="#" download>下载原图</a>
+          <button id="close-viewer" type="button" aria-label="关闭查看器">关闭</button>
+        </div>
+      </div>
+      <img id="viewer-image" alt="" />
+    </dialog>
+
+    <template id="photo-template">
+      <button class="photo" type="button">
+        <img loading="lazy" decoding="async" alt="" />
+        <span class="photo-index"></span>
+      </button>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
